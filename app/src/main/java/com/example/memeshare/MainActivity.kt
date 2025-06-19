@@ -62,7 +62,8 @@ class MainActivity : AppCompatActivity() {
                 }).into(imageView)
             },
             {
-                Toast.makeText(this,"Something went wrong!" , Toast.LENGTH_LONG).show()
+                Toast.makeText(this, "Something went wrong!", Toast.LENGTH_LONG).show()
+                progressBar.visibility = View.GONE
             })
 
 // Add the request to the RequestQueue.
@@ -76,7 +77,7 @@ class MainActivity : AppCompatActivity() {
         val intent = Intent(Intent.ACTION_SEND)
         intent.type = "text/plain"
         intent.putExtra(Intent.EXTRA_TEXT,"Hey checkout this new meme from Reddit ${currentImageUrl}")
-        val chooser = Intent.createChooser(intent,"Share this meme using: ")
-        startActivity(intent)
+        val chooser = Intent.createChooser(intent, "Share this meme using: ")
+        startActivity(chooser)
     }
 }
